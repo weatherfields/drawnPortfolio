@@ -1,0 +1,307 @@
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background;
+  background: $primary-color;
+  color: #f5f7ed;
+  height: 100%;
+  margin: 0;
+  font-family: "handmade";
+  line-height: 1.5;
+}
+
+// Drawings :
+#ChrisCuomo {
+  max-width: 40vw;
+}
+#aboutMeTxt {
+  max-width: 30vw;
+}
+#reachMeTxt {
+  max-width: 30vw;
+}
+#my-port-text {
+  max-width: 35vw;
+}
+// Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 4.9rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.5rem 0rem 0rem 0.5rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+    // border: darken($border-color, 30) 1px solid;
+  }
+}
+
+#h2-head {
+  font-family: handmade;
+  font-size: 1.8rem;
+  display: grid;
+  grid-gap: 20px;
+
+  grid-template-areas: "img img img img";
+
+  grid-template-columns: repeat(7, 1fr);
+}
+.small-text {
+  font-size: 0.9em;
+}
+
+a {
+  // color: #f5f7ed;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  // height: 100%;
+  min-height: calc(100vh - 30px);
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.4rem;
+      @include easeOut;
+
+      &:hover {
+        color: rgb(5, 211, 98);
+      }
+    }
+  }
+  .homeIcons {
+    max-width: 4vw;
+    &:hover {
+      opacity: 0.5;
+      // border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+
+  &#home {
+    overflow: hidden;
+
+    h1 {
+      margin-top: 20vh;
+    }
+  }
+}
+
+// About me page
+#lineAbout {
+  width: 90vw;
+  height: 10px;
+}
+.p-bio {
+  // font-family: Arial, Helvetica, sans-serif;
+  font-family: handmade;
+  font-size: 1.4em;
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 20px;
+
+  grid-template-areas:
+    "bioimage bio bio bio"
+    "bioimage1 bio bio bio";
+  grid-template-columns: repeat(4, 2fr);
+}
+
+.bio-image,
+.bio-image1 {
+  grid-area: bioimage;
+  height: 300px;
+  max-width: 300px;
+  margin: inherit;
+  margin-top: 24px;
+  // border-radius: 20%;
+  // border: $border-color 3px solid;
+}
+
+.bio {
+  grid-area: bio;
+}
+
+#redface {
+  width: 20vh;
+  border: 3px #f5f7ed solid;
+  border-radius: 15%;
+}
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    z-index: -1;
+    width: 100%;
+    // border: 3px #f5f7ed solid;
+    // border-radius: 15%;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeOut;
+    }
+  }
+  .frame-draw {
+    width: 100%;
+    z-index: 5;
+  }
+}
+
+h5 {
+  text-align: center;
+  color: $secondary-color;
+  line-height: 1;
+}
+
+h4 {
+  // margin: 0.7em;
+  font-family: handmade;
+  text-align: center;
+  // color: $secondary-color;
+  line-height: 1;
+  font-size: 1.7rem;
+}
+
+// contact page
+.box-inputs {
+  color: $secondary-color;
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px #f5f7ed solid;
+    border-radius: 50%;
+    padding: 1rem 3rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+
+      span {
+        color: set-text-color($secondary-color);
+      }
+    }
+  }
+}
+
+#contact-page-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  // margin-top: 1rem;
+}
+
+// button style
+.btn {
+  // margin-left: 33%;
+  display: inline-block;
+  padding: 0.5rem 0.5rem;
+  border: 1px rgb(71, 71, 71) solid;
+  margin-bottom: 0.3rem;
+  border-radius: 20%;
+
+  &:hover {
+    background: $buttonHover-color;
+    color: set-text-color ($secondary-color);
+    @include easeOutShort;
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #f5f7ed;
+}
+
+.btn-tube {
+  border: 1px #f5f7ed solid;
+  @extend .btn;
+  background: #c4302b;
+  color: #f5f7ed;
+
+  &:hover {
+    background: #f8413a;
+    color: set-text-color ($secondary-color);
+  }
+}
+
+.btn-res {
+  border: 1px #f5f7ed solid;
+  @extend .btn;
+  background: #051537;
+  color: #f5f7ed;
+
+  &:hover {
+    background: #0458ab;
+    color: set-text-color ($secondary-color);
+  }
+}
+
+.btn-light {
+  @extend .btn;
+  background-color: $secondary-color;
+  color: #f5f7ed;
+}
+
+// contact page
+.form {
+  max-width: 33.33%;
+  background-color: rgba(lighten($primary-color, 9), 2);
+  padding: 20px;
+  border: 1px $secondary-color solid;
+}
+
+#main-footer {
+  justify-items: center;
+  display: grid;
+  grid-template-areas: "span img span";
+  grid-template-columns: 29fr 46fr 29fr;
+
+  height: 30px;
+  // left: 0;
+}
+#footerImg {
+  max-width: 100vw;
+}
+
+@import "mobile"; // moved here because need to run media query after initial css

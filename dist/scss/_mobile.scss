@@ -1,0 +1,327 @@
+// wide screens
+@include mediaXl {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .my-image {
+    width: -webkit-fill-available;
+  }
+}
+
+// Desktops / Laps
+@include mediaLg {
+  main .homeIcons {
+    max-width: 7vw;
+  }
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #reachMeTxt {
+    max-width: 42vw;
+  }
+
+  .my-image {
+    width: -webkit-fill-available;
+  }
+  #h2-head {
+    img {
+      max-width: 70vw;
+    }
+    #music {
+      max-width: 40vw;
+    }
+
+    display: grid;
+    grid-gap: 5px;
+
+    grid-template-areas:
+      "img"
+      "img"
+      "img"
+      "img";
+    grid-template-columns: repeat(1, 2fr);
+  }
+  .menu {
+    #gtr1 {
+      max-width: 45vw;
+    }
+    .gtr {
+      transform: translate3d(-100rem, -40rem, 0rem);
+      @include easeOutLong;
+
+      &.show {
+        //slide in from the right
+        transform: translate3d(7vw, 15vh, 0) rotate(720deg) rotatez(-45deg);
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+// Tablets / sm laps
+@include mediaMd {
+  main {
+    align-items: center;
+    // text-align: center;
+
+    .homeIcons {
+      max-width: 8vw;
+    }
+    .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+  }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+
+    .my-image {
+      width: -webkit-fill-available;
+      background: url(../images/drawings/meMainSmallest.png);
+      background-repeat: no-repeat;
+      // background-size: cover;
+      width: 197px;
+      height: 238px;
+    }
+  }
+
+  .about-info {
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+    grid-template-columns: 1fr; // was 3 fr but want them stacked
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #h2-head {
+    img {
+      max-width: 70vw;
+    }
+    #music {
+      max-width: 40vw;
+    }
+    // font-family: charlieBrown;
+    // font-size: 3rem;
+    display: grid;
+    grid-gap: 5px;
+
+    grid-template-areas:
+      "img"
+      "img"
+      "img"
+      "img";
+    grid-template-columns: repeat(1, 4fr);
+  }
+  //   .my-name {
+  //     margin-top: 5vh;
+  //   }
+  .menu {
+    #gtr1 {
+      max-width: 45vw;
+    }
+    .gtr {
+      transform: translate3d(-100rem, -40rem, 0rem);
+      @include easeOutLong;
+
+      &.show {
+        //slide in from the right
+        // margin-top: 25%;
+        transform: translate3d(25vw, 3vh, 0) rotate(720deg) rotatez(-45deg);
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+// phones
+@include mediaSm {
+  h1.lg-heading {
+    font-size: 3rem;
+  }
+  main .homeIcons {
+    max-width: 9vw;
+  }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .menu {
+    .nav-link {
+      padding: 0.6rem;
+    }
+    #gtr1 {
+      max-width: 65vw;
+    }
+    .gtr {
+      transform: translate3d(-100rem, -40rem, 0rem);
+      @include easeOutLong;
+
+      &.show {
+        //slide in from the right
+        margin-left: 20vw;
+        transform: translate3d(12vw, 3vh, 0) rotate(720deg) rotatez(-45deg);
+        margin-bottom: 7vh;
+      }
+    }
+  }
+  .nav-img {
+    max-width: 11rem;
+  }
+
+  .menu-nav {
+    height: 70vh;
+    transform: translate3d(-100%, 0, 0);
+    // font-size: 24px;
+  }
+
+  .menu-branding {
+    height: 30vh;
+    transform: translate3d(100%, 0, 0);
+
+    .my-image {
+      width: -webkit-fill-available;
+      background: url(../images/drawings/meMainSmallest.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      max-width: 45%;
+      height: auto;
+      margin-left: 2rem;
+      // max-width: 10rem;
+    }
+  }
+
+  #CCdescription {
+    max-width: 85vw;
+  }
+  #ChrisCuomo {
+    max-width: 70vw;
+  }
+  #email {
+    max-width: 100vw;
+  }
+  .box-inputs {
+    font-size: 0.9em;
+  }
+  #email-txt {
+    text-align: center;
+    font-size: 0.65em;
+  }
+
+  #phone-txt {
+    text-align: center;
+    font-size: 0.7em;
+  }
+
+  #address-txt {
+    text-align: center;
+    font-size: 0.7em;
+  }
+
+  #my-name-bio {
+    margin-top: 10vh;
+  }
+
+  #about {
+    padding: 1rem;
+  }
+  #work {
+    padding: 1rem;
+  }
+  .my-name {
+    margin-top: 10vh;
+  }
+  #aboutMeTxt {
+    max-width: 65vw;
+  }
+  #reachMeTxt {
+    max-width: 65vw;
+  }
+  #my-port-text {
+    max-width: 70vw;
+  }
+
+  .bio {
+    font-size: 0.9em;
+    text-align: initial;
+  }
+  .p-bio {
+    font-size: 1.3em;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  #home {
+    padding: 1rem;
+    // margin-top: 7vh;
+  }
+  #contact {
+    padding: 1rem;
+    // margin-top: 7vh;
+  }
+  .about-info {
+    grid-gap: 2px;
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+    grid-template-columns: 1fr; // was 3 fr but want them stacked
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #h2-head {
+    img {
+      max-width: 60vw;
+    }
+    #music {
+      max-width: 30vw;
+    }
+    // font-family: charlieBrown;
+    // font-size: 3rem;
+    display: grid;
+    grid-gap: 3px;
+
+    grid-template-areas:
+      "img"
+      "img"
+      "img"
+      "img";
+    grid-template-columns: repeat(1, 4fr);
+  }
+}
