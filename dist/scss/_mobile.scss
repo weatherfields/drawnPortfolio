@@ -210,11 +210,11 @@
     transform: translate3d(100%, 0, 0);
 
     .my-image {
-      width: -webkit-fill-available;
+      // width: -webkit-fill-available;
       background: url(../images/drawings/meMainSmallest.png);
       background-repeat: no-repeat;
       background-size: cover;
-      max-width: 45%;
+      max-width: 41%;
       height: auto;
       margin-left: 2rem;
       // max-width: 10rem;
